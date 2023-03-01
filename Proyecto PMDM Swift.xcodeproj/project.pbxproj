@@ -12,6 +12,10 @@
 		48AD9E7429AF3F9B0063905E /* CeldaSucursalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E7229AF3F9B0063905E /* CeldaSucursalesView.swift */; };
 		48AD9E7529AF3F9B0063905E /* CeldaSucursalesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AD9E7329AF3F9B0063905E /* CeldaSucursalesView.xib */; };
 		48AD9E7729AF45CB0063905E /* VistaSucursalCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E7629AF45CB0063905E /* VistaSucursalCRUD.swift */; };
+		48AD9E8229AF4FFC0063905E /* CeldaClienteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E8029AF4FFC0063905E /* CeldaClienteView.swift */; };
+		48AD9E8329AF4FFC0063905E /* CeldaClienteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AD9E8129AF4FFC0063905E /* CeldaClienteView.xib */; };
+		48AD9E8A29AF5BCD0063905E /* CeldaCuentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E8829AF5BCD0063905E /* CeldaCuentaView.swift */; };
+		48AD9E8B29AF5BCD0063905E /* CeldaCuentaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AD9E8929AF5BCD0063905E /* CeldaCuentaView.xib */; };
 		48C4423F29A6184E00133983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4423E29A6184E00133983 /* AppDelegate.swift */; };
 		48C4424129A6184E00133983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424029A6184E00133983 /* SceneDelegate.swift */; };
 		48C4424329A6184E00133983 /* VistaSucursal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424229A6184E00133983 /* VistaSucursal.swift */; };
@@ -27,6 +31,10 @@
 		48AD9E7229AF3F9B0063905E /* CeldaSucursalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaSucursalesView.swift; sourceTree = "<group>"; };
 		48AD9E7329AF3F9B0063905E /* CeldaSucursalesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaSucursalesView.xib; sourceTree = "<group>"; };
 		48AD9E7629AF45CB0063905E /* VistaSucursalCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaSucursalCRUD.swift; sourceTree = "<group>"; };
+		48AD9E8029AF4FFC0063905E /* CeldaClienteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaClienteView.swift; sourceTree = "<group>"; };
+		48AD9E8129AF4FFC0063905E /* CeldaClienteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaClienteView.xib; sourceTree = "<group>"; };
+		48AD9E8829AF5BCD0063905E /* CeldaCuentaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaCuentaView.swift; sourceTree = "<group>"; };
+		48AD9E8929AF5BCD0063905E /* CeldaCuentaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaCuentaView.xib; sourceTree = "<group>"; };
 		48C4423B29A6184E00133983 /* Proyecto PMDM Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto PMDM Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C4423E29A6184E00133983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C4424029A6184E00133983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 				48AD9E7229AF3F9B0063905E /* CeldaSucursalesView.swift */,
 				48AD9E7329AF3F9B0063905E /* CeldaSucursalesView.xib */,
 				48AD9E7629AF45CB0063905E /* VistaSucursalCRUD.swift */,
+				48AD9E8029AF4FFC0063905E /* CeldaClienteView.swift */,
+				48AD9E8129AF4FFC0063905E /* CeldaClienteView.xib */,
+				48AD9E8829AF5BCD0063905E /* CeldaCuentaView.swift */,
+				48AD9E8929AF5BCD0063905E /* CeldaCuentaView.xib */,
 			);
 			path = "Proyecto PMDM Swift";
 			sourceTree = "<group>";
@@ -143,10 +155,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AD9E8B29AF5BCD0063905E /* CeldaCuentaView.xib in Resources */,
 				48C4424B29A6184E00133983 /* LaunchScreen.storyboard in Resources */,
 				48AD9E7529AF3F9B0063905E /* CeldaSucursalesView.xib in Resources */,
 				48C4424829A6184E00133983 /* Assets.xcassets in Resources */,
 				48C4424629A6184E00133983 /* Main.storyboard in Resources */,
+				48AD9E8329AF4FFC0063905E /* CeldaClienteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,12 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AD9E8A29AF5BCD0063905E /* CeldaCuentaView.swift in Sources */,
 				48C4424329A6184E00133983 /* VistaSucursal.swift in Sources */,
 				48AD9E7729AF45CB0063905E /* VistaSucursalCRUD.swift in Sources */,
 				48AD9E6D29AD13720063905E /* VistaCuenta.swift in Sources */,
 				48AD9E7429AF3F9B0063905E /* CeldaSucursalesView.swift in Sources */,
 				48C4423F29A6184E00133983 /* AppDelegate.swift in Sources */,
 				48AD9E6B29AD12D80063905E /* VistaCliente.swift in Sources */,
+				48AD9E8229AF4FFC0063905E /* CeldaClienteView.swift in Sources */,
 				48C4425529A63D2D00133983 /* InicioApp.swift in Sources */,
 				48C4424129A6184E00133983 /* SceneDelegate.swift in Sources */,
 			);

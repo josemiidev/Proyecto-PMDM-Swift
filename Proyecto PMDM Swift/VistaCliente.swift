@@ -1,36 +1,35 @@
 //
-//  ViewController.swift
+//  VistaCliente.swift
 //  Proyecto PMDM Swift
 //
-//  Created by José Miguel Lorenzo Lara on 22/2/23.
+//  Created by José Miguel Lorenzo Lara on 27/2/23.
 //
 
 import UIKit
-
-struct Sucursal :Codable{
+struct Cliente :Codable{
     let id : Int?
-    let poblacion : String?
-    let provincia : String?
-    let referencia : String?
+    let dni : String?
+    let nombre : String?
+    let apellidos : String?
+    let fechaNacimiento: String?
+    let sucursalByIdSucursal: Sucursal?
 }
-class VistaSucursal: UIViewController {
+class VistaCliente: UIViewController {
     
     @IBOutlet weak var tabla: UITableView!
-    
-    var sucursales : [Sucursal] = []
+    var clientes : [Cliente] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tabla.register(UINib(nibName:  "CeldaSucursalesView", bundle: nil), forCellReuseIdentifier: "celdaSucursal")
+        tabla.register(UINib(nibName:  "CeldaClienteView", bundle: nil), forCellReuseIdentifier: "celdaCliente")
         tabla.delegate = self
         tabla.dataSource = self
         
-        buscarSucursales()
+        buscarClientes()
     }
     
-    func buscarSucursales(){
-        guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales") else {
+    func buscarClientes(){
+        guard let url = URL(string: "http://dam2-15e3b8:8000/clientes") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -52,9 +51,9 @@ class VistaSucursal: UIViewController {
             }
             do {
                 let decoder = JSONDecoder()
-                let datos = try decoder.decode([Sucursal].self, from: data)
+                let datos = try decoder.decode([Cliente].self, from: data)
                 //print("tabla: \(datos.count)")
-                self.sucursales.append(contentsOf: datos)
+                self.clientes.append(contentsOf: datos)
                 DispatchQueue.main.async {
                     self.tabla.reloadData()
                 }
@@ -66,28 +65,26 @@ class VistaSucursal: UIViewController {
         }.resume()
     }
 }
-
-extension VistaSucursal: UITableViewDelegate, UITableViewDataSource{
+extension VistaCliente: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sucursales.count
+        return clientes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tabla.dequeueReusableCell(withIdentifier: "celdaSucursal", for: indexPath) as! CeldaSucursalesView
+        let celda = tabla.dequeueReusableCell(withIdentifier: "celdaCliente", for: indexPath) as! CeldaClienteView
         print(celda)
-        celda.lblPoblacion.text = sucursales[indexPath.row].poblacion
-        celda.lblProvincia.text = sucursales[indexPath.row].provincia
-        celda.lblReferencia.text = sucursales[indexPath.row].referencia
-        celda.id = Int(sucursales[indexPath.row].id ?? 0)
+        celda.lblNombre.text = (clientes[indexPath.row].nombre ?? "") + " " + (clientes[indexPath.row].apellidos ?? "")
+        celda.lblDni.text = clientes[indexPath.row].dni
+        celda.id = Int(clientes[indexPath.row].id ?? 0)
         return celda
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let celda = tabla.cellForRow(at: indexPath) as! CeldaSucursalesView
+        let celda = tabla.cellForRow(at: indexPath) as! CeldaClienteView
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Sucursal") as! VistaSucursalCRUD;
+        let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cliente") as! VistaSucursalCRUD;
         vc.idSucursal = celda.id
         self.present(vc,animated: true,completion: nil)
     }
 }
-
