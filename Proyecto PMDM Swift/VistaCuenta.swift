@@ -52,7 +52,6 @@ class VistaCuenta: UIViewController {
             do {
                 let decoder = JSONDecoder()
                 let datos = try decoder.decode([Cuenta].self, from: data)
-                //print("tabla: \(datos.count)")
                 self.cuentas.append(contentsOf: datos)
                 DispatchQueue.main.async {
                     self.tabla.reloadData()
@@ -68,13 +67,11 @@ class VistaCuenta: UIViewController {
 }
 extension VistaCuenta: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(cuentas.count)
         return cuentas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tabla.dequeueReusableCell(withIdentifier: "celdaCuenta", for: indexPath) as! CeldaCuentaView
-        print(cuentas[indexPath.row].ccc ?? "")
         celda.lblCuenta.text = cuentas[indexPath.row].ccc
         celda.lblSaldo.text = NSString(format: "%.2f", cuentas[indexPath.row].saldo ?? 0.0) as String?
         celda.id = Int(cuentas[indexPath.row].id ?? 0)

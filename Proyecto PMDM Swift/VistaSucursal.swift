@@ -75,7 +75,6 @@ extension VistaSucursal: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tabla.dequeueReusableCell(withIdentifier: "celdaSucursal", for: indexPath) as! CeldaSucursalesView
-        print(celda)
         celda.lblPoblacion.text = sucursales[indexPath.row].poblacion
         celda.lblProvincia.text = sucursales[indexPath.row].provincia
         celda.lblReferencia.text = sucursales[indexPath.row].referencia

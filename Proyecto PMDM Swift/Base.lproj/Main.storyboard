@@ -196,7 +196,7 @@
         <!--Sucursales-->
         <scene sceneID="irH-1e-WuZ">
             <objects>
-                <viewController id="14J-mh-JIP" customClass="VistaSucursal" customModule="Proyecto_PMDM_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lista_Sucursales" id="14J-mh-JIP" customClass="VistaSucursal" customModule="Proyecto_PMDM_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3cH-sE-C3Z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,12 +306,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guardar"/>
+                                <connections>
+                                    <action selector="btnGuardar:" destination="2ds-YU-q4F" eventType="touchUpInside" id="JyD-SU-Qjz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fx-yr-Pwk">
                                 <rect key="frame" x="16" y="228" width="361" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Eliminar"/>
+                                <connections>
+                                    <action selector="btnEliminar:" destination="2ds-YU-q4F" eventType="touchUpInside" id="Anf-Ie-KSK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lk7-fB-M9K"/>
