@@ -9,8 +9,8 @@ import UIKit
 
 class CeldaCuentaView: UITableViewCell {
 
-    @IBOutlet weak var saldo: UILabel!
-    @IBOutlet weak var ccc: UILabel!
+    @IBOutlet weak var lblSaldo: UILabel!
+    @IBOutlet weak var lblCuenta: UILabel!
     var id : Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()

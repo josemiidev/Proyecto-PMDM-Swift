@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1804" y="358"/>
         </scene>
-        <!--Vista Sucursal-->
+        <!--Vista CuentaCRUD-->
         <scene sceneID="WsS-DK-BhZ">
             <objects>
-                <viewController id="uma-c5-DPl" customClass="VistaSucursal" customModule="Proyecto_PMDM_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CRUD_Cuenta" id="uma-c5-DPl" customClass="VistaCuentaCRUD" customModule="Proyecto_PMDM_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6dz-tV-kpW" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="3498" y="4"/>
         </scene>
-        <!--Vista Sucursal-->
+        <!--Vista ClienteCRUD-->
         <scene sceneID="HQU-i9-K58">
             <objects>
-                <viewController id="g0v-a6-oDM" customClass="VistaSucursal" customModule="Proyecto_PMDM_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CRUD_Cliente" id="g0v-a6-oDM" customClass="VistaClienteCRUD" customModule="Proyecto_PMDM_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neT-GB-poa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

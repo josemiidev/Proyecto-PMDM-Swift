@@ -28,7 +28,8 @@ class VistaCuenta: UIViewController {
         buscarCuentas()
     }
     func buscarCuentas(){
-        guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas") else {
+        guard let url = URL(string: "http://JOSEMIGUEL:8000/cuentas") else {
+        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -73,19 +74,18 @@ extension VistaCuenta: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tabla.dequeueReusableCell(withIdentifier: "celdaCuenta", for: indexPath) as! CeldaCuentaView
-        print(celda)
-        celda.ccc.text = cuentas[indexPath.row].ccc
-        celda.saldo.text = NSString(format: "%.2f", cuentas[indexPath.row].saldo ?? 0.0) as String?
+        print(cuentas[indexPath.row].ccc ?? "")
+        celda.lblCuenta.text = cuentas[indexPath.row].ccc
+        celda.lblSaldo.text = NSString(format: "%.2f", cuentas[indexPath.row].saldo ?? 0.0) as String?
         celda.id = Int(cuentas[indexPath.row].id ?? 0)
         return celda
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let celda = tabla.cellForRow(at: indexPath) as! CeldaClienteView
+        let celda = tabla.cellForRow(at: indexPath) as! CeldaCuentaView
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cuenta") as! VistaSucursalCRUD;
-        vc.idSucursal = celda.id
+        let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cuenta") as! VistaCuentaCRUD;
         self.present(vc,animated: true,completion: nil)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  VistaSucursalCRUD.swift
+//  VistaClienteCRUD.swift
 //  Proyecto PMDM Swift
 //
 //  Created by José Miguel Lorenzo Lara on 1/3/23.
@@ -7,13 +7,11 @@
 
 import UIKit
 
-class VistaSucursalCRUD: UIViewController {
+class VistaClienteCRUD: UIViewController {
 
-    var idSucursal : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // Do any additional setup after loading the view.
     }
     

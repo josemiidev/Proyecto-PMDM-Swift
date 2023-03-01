@@ -30,7 +30,8 @@ class VistaSucursal: UIViewController {
     }
     
     func buscarSucursales(){
-        guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales") else {
+        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
+        //guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales") else {
             print("ERROR AL CREAR LA URL")
             return
         }

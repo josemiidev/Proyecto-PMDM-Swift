@@ -29,7 +29,8 @@ class VistaCliente: UIViewController {
     }
     
     func buscarClientes(){
-        guard let url = URL(string: "http://dam2-15e3b8:8000/clientes") else {
+        guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes") else {
+        //guard let url = URL(string: "http://dam2-15e3b8:8000/clientes") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -72,7 +73,6 @@ extension VistaCliente: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tabla.dequeueReusableCell(withIdentifier: "celdaCliente", for: indexPath) as! CeldaClienteView
-        print(celda)
         celda.lblNombre.text = (clientes[indexPath.row].nombre ?? "") + " " + (clientes[indexPath.row].apellidos ?? "")
         celda.lblDni.text = clientes[indexPath.row].dni
         celda.id = Int(clientes[indexPath.row].id ?? 0)
@@ -83,8 +83,7 @@ extension VistaCliente: UITableViewDelegate, UITableViewDataSource{
         let celda = tabla.cellForRow(at: indexPath) as! CeldaClienteView
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cliente") as! VistaSucursalCRUD;
-        vc.idSucursal = celda.id
+        let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cliente") as! VistaClienteCRUD;
         self.present(vc,animated: true,completion: nil)
     }
 }

@@ -16,6 +16,8 @@
 		48AD9E8329AF4FFC0063905E /* CeldaClienteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AD9E8129AF4FFC0063905E /* CeldaClienteView.xib */; };
 		48AD9E8A29AF5BCD0063905E /* CeldaCuentaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E8829AF5BCD0063905E /* CeldaCuentaView.swift */; };
 		48AD9E8B29AF5BCD0063905E /* CeldaCuentaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AD9E8929AF5BCD0063905E /* CeldaCuentaView.xib */; };
+		48AD9E8D29AF8AD20063905E /* VistaCuentaCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E8C29AF8AD20063905E /* VistaCuentaCRUD.swift */; };
+		48AD9E8F29AF8AE10063905E /* VistaClienteCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E8E29AF8AE10063905E /* VistaClienteCRUD.swift */; };
 		48C4423F29A6184E00133983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4423E29A6184E00133983 /* AppDelegate.swift */; };
 		48C4424129A6184E00133983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424029A6184E00133983 /* SceneDelegate.swift */; };
 		48C4424329A6184E00133983 /* VistaSucursal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424229A6184E00133983 /* VistaSucursal.swift */; };
@@ -35,6 +37,8 @@
 		48AD9E8129AF4FFC0063905E /* CeldaClienteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaClienteView.xib; sourceTree = "<group>"; };
 		48AD9E8829AF5BCD0063905E /* CeldaCuentaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaCuentaView.swift; sourceTree = "<group>"; };
 		48AD9E8929AF5BCD0063905E /* CeldaCuentaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaCuentaView.xib; sourceTree = "<group>"; };
+		48AD9E8C29AF8AD20063905E /* VistaCuentaCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCuentaCRUD.swift; sourceTree = "<group>"; };
+		48AD9E8E29AF8AE10063905E /* VistaClienteCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaClienteCRUD.swift; sourceTree = "<group>"; };
 		48C4423B29A6184E00133983 /* Proyecto PMDM Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto PMDM Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C4423E29A6184E00133983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C4424029A6184E00133983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				48AD9E8129AF4FFC0063905E /* CeldaClienteView.xib */,
 				48AD9E8829AF5BCD0063905E /* CeldaCuentaView.swift */,
 				48AD9E8929AF5BCD0063905E /* CeldaCuentaView.xib */,
+				48AD9E8C29AF8AD20063905E /* VistaCuentaCRUD.swift */,
+				48AD9E8E29AF8AE10063905E /* VistaClienteCRUD.swift */,
 			);
 			path = "Proyecto PMDM Swift";
 			sourceTree = "<group>";
@@ -173,8 +179,10 @@
 			files = (
 				48AD9E8A29AF5BCD0063905E /* CeldaCuentaView.swift in Sources */,
 				48C4424329A6184E00133983 /* VistaSucursal.swift in Sources */,
+				48AD9E8F29AF8AE10063905E /* VistaClienteCRUD.swift in Sources */,
 				48AD9E7729AF45CB0063905E /* VistaSucursalCRUD.swift in Sources */,
 				48AD9E6D29AD13720063905E /* VistaCuenta.swift in Sources */,
+				48AD9E8D29AF8AD20063905E /* VistaCuentaCRUD.swift in Sources */,
 				48AD9E7429AF3F9B0063905E /* CeldaSucursalesView.swift in Sources */,
 				48C4423F29A6184E00133983 /* AppDelegate.swift in Sources */,
 				48AD9E6B29AD12D80063905E /* VistaCliente.swift in Sources */,
