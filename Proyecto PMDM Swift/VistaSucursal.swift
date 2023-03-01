@@ -87,7 +87,7 @@ extension VistaSucursal: UITableViewDelegate, UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Sucursal") as! VistaSucursalCRUD;
-        vc.idSucursal = celda.id
+        vc.id = celda.id
         self.present(vc,animated: true,completion: nil)
     }
 }

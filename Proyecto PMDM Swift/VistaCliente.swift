@@ -84,6 +84,7 @@ extension VistaCliente: UITableViewDelegate, UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cliente") as! VistaClienteCRUD;
+        vc.id = celda.id
         self.present(vc,animated: true,completion: nil)
     }
 }

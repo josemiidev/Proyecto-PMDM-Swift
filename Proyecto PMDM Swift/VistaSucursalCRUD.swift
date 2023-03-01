@@ -9,11 +9,23 @@ import UIKit
 
 class VistaSucursalCRUD: UIViewController {
 
-    var idSucursal : Int = 0
+    @IBOutlet weak var btnEliminar: UIButton!
+    @IBOutlet weak var btnGuardar: UIButton!
+    @IBOutlet weak var referencia: UITextField!
+    @IBOutlet weak var provincia: UITextField!
+    @IBOutlet weak var poblacion: UITextField!
+    @IBOutlet weak var titulo: UILabel!
+    var id : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if(id == 0 ){
+            titulo.text = "Nueva Sucursal"
+            btnEliminar.isHidden = true
+        }else{
+            titulo.text = "Editar Sucursal"
+            btnEliminar.isHidden = false
+        }
         // Do any additional setup after loading the view.
     }
     

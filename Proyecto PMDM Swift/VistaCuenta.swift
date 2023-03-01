@@ -86,6 +86,7 @@ extension VistaCuenta: UITableViewDelegate, UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Cuenta") as! VistaCuentaCRUD;
+        vc.id = celda.id
         self.present(vc,animated: true,completion: nil)
     }
 }
