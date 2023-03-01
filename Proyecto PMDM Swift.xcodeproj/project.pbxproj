@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48AD9E6B29AD12D80063905E /* VistaCliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E6A29AD12D80063905E /* VistaCliente.swift */; };
+		48AD9E6D29AD13720063905E /* VistaCuenta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E6C29AD13720063905E /* VistaCuenta.swift */; };
+		48AD9E7429AF3F9B0063905E /* CeldaSucursalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E7229AF3F9B0063905E /* CeldaSucursalesView.swift */; };
+		48AD9E7529AF3F9B0063905E /* CeldaSucursalesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AD9E7329AF3F9B0063905E /* CeldaSucursalesView.xib */; };
+		48AD9E7729AF45CB0063905E /* VistaSucursalCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD9E7629AF45CB0063905E /* VistaSucursalCRUD.swift */; };
 		48C4423F29A6184E00133983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4423E29A6184E00133983 /* AppDelegate.swift */; };
 		48C4424129A6184E00133983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424029A6184E00133983 /* SceneDelegate.swift */; };
-		48C4424329A6184E00133983 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424229A6184E00133983 /* ViewController.swift */; };
+		48C4424329A6184E00133983 /* VistaSucursal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4424229A6184E00133983 /* VistaSucursal.swift */; };
 		48C4424629A6184E00133983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C4424429A6184E00133983 /* Main.storyboard */; };
 		48C4424829A6184E00133983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C4424729A6184E00133983 /* Assets.xcassets */; };
 		48C4424B29A6184E00133983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C4424929A6184E00133983 /* LaunchScreen.storyboard */; };
@@ -17,10 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48AD9E6A29AD12D80063905E /* VistaCliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCliente.swift; sourceTree = "<group>"; };
+		48AD9E6C29AD13720063905E /* VistaCuenta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCuenta.swift; sourceTree = "<group>"; };
+		48AD9E7229AF3F9B0063905E /* CeldaSucursalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaSucursalesView.swift; sourceTree = "<group>"; };
+		48AD9E7329AF3F9B0063905E /* CeldaSucursalesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaSucursalesView.xib; sourceTree = "<group>"; };
+		48AD9E7629AF45CB0063905E /* VistaSucursalCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaSucursalCRUD.swift; sourceTree = "<group>"; };
 		48C4423B29A6184E00133983 /* Proyecto PMDM Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto PMDM Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C4423E29A6184E00133983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C4424029A6184E00133983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48C4424229A6184E00133983 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48C4424229A6184E00133983 /* VistaSucursal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaSucursal.swift; sourceTree = "<group>"; };
 		48C4424529A6184E00133983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48C4424729A6184E00133983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48C4424A29A6184E00133983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,11 +71,16 @@
 				48C4425429A63D2D00133983 /* InicioApp.swift */,
 				48C4423E29A6184E00133983 /* AppDelegate.swift */,
 				48C4424029A6184E00133983 /* SceneDelegate.swift */,
-				48C4424229A6184E00133983 /* ViewController.swift */,
+				48C4424229A6184E00133983 /* VistaSucursal.swift */,
+				48AD9E6A29AD12D80063905E /* VistaCliente.swift */,
+				48AD9E6C29AD13720063905E /* VistaCuenta.swift */,
 				48C4424429A6184E00133983 /* Main.storyboard */,
 				48C4424729A6184E00133983 /* Assets.xcassets */,
 				48C4424929A6184E00133983 /* LaunchScreen.storyboard */,
 				48C4424C29A6184E00133983 /* Info.plist */,
+				48AD9E7229AF3F9B0063905E /* CeldaSucursalesView.swift */,
+				48AD9E7329AF3F9B0063905E /* CeldaSucursalesView.xib */,
+				48AD9E7629AF45CB0063905E /* VistaSucursalCRUD.swift */,
 			);
 			path = "Proyecto PMDM Swift";
 			sourceTree = "<group>";
@@ -129,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C4424B29A6184E00133983 /* LaunchScreen.storyboard in Resources */,
+				48AD9E7529AF3F9B0063905E /* CeldaSucursalesView.xib in Resources */,
 				48C4424829A6184E00133983 /* Assets.xcassets in Resources */,
 				48C4424629A6184E00133983 /* Main.storyboard in Resources */,
 			);
@@ -141,8 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C4424329A6184E00133983 /* ViewController.swift in Sources */,
+				48C4424329A6184E00133983 /* VistaSucursal.swift in Sources */,
+				48AD9E7729AF45CB0063905E /* VistaSucursalCRUD.swift in Sources */,
+				48AD9E6D29AD13720063905E /* VistaCuenta.swift in Sources */,
+				48AD9E7429AF3F9B0063905E /* CeldaSucursalesView.swift in Sources */,
 				48C4423F29A6184E00133983 /* AppDelegate.swift in Sources */,
+				48AD9E6B29AD12D80063905E /* VistaCliente.swift in Sources */,
 				48C4425529A63D2D00133983 /* InicioApp.swift in Sources */,
 				48C4424129A6184E00133983 /* SceneDelegate.swift in Sources */,
 			);
