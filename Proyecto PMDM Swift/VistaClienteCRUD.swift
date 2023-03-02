@@ -26,8 +26,6 @@ class VistaClienteCRUD: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         spinner.delegate = self
         spinner.dataSource = self
         
@@ -176,7 +174,7 @@ class VistaClienteCRUD: UIViewController {
                 DispatchQueue.main.async {
                     
                     // Create new Alert
-                     var dialogMessage = UIAlertController(title: "Correcto", message: "Nueva Sucursal añadida correctamente", preferredStyle: .alert)
+                     var dialogMessage = UIAlertController(title: "Correcto", message: "Nuevo Cliente añadido correctamente", preferredStyle: .alert)
                      
                      // Create OK button with action handler
                      let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
@@ -218,7 +216,7 @@ class VistaClienteCRUD: UIViewController {
             do {
                 DispatchQueue.main.async {
                         // Create new Alert
-                         var dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal eliminada correctamente", preferredStyle: .alert)
+                         var dialogMessage = UIAlertController(title: "Correcto", message: "Cliente eliminado correctamente", preferredStyle: .alert)
                          
                          // Create OK button with action handler
                          let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
@@ -271,7 +269,7 @@ class VistaClienteCRUD: UIViewController {
                 DispatchQueue.main.async {
                     
                     // Create new Alert
-                     var dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal modificada correctamente", preferredStyle: .alert)
+                     var dialogMessage = UIAlertController(title: "Correcto", message: "Cliente modificado correctamente", preferredStyle: .alert)
                      
                      // Create OK button with action handler
                      let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
@@ -302,9 +300,7 @@ class VistaClienteCRUD: UIViewController {
                 
                 let suc = sucursales[spinner.selectedRow(inComponent: 0)]
                 
-                var c = Cliente(id: 0, dni: dni.text, nombre: nombre.text, apellidos: apellidos.text, fechaNacimiento: fecha,sucursalByIdSucursal: suc)
-                
-                item = c
+                item = Cliente(id: 0, dni: dni.text, nombre: nombre.text, apellidos: apellidos.text, fechaNacimiento: fecha,sucursalByIdSucursal: suc)
                 
                 guardarCliente()
             }else{
@@ -315,9 +311,7 @@ class VistaClienteCRUD: UIViewController {
                 
                 let suc = sucursales[spinner.selectedRow(inComponent: 0)]
                 
-                var c = Cliente(id: id, dni: dni.text, nombre: nombre.text, apellidos: apellidos.text, fechaNacimiento: fecha,sucursalByIdSucursal: suc)
-                
-                item = c
+                item = Cliente(id: id, dni: dni.text, nombre: nombre.text, apellidos: apellidos.text, fechaNacimiento: fecha,sucursalByIdSucursal: suc)
                 modificarCliente(id: id)
             }
         }

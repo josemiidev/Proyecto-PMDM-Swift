@@ -13,6 +13,10 @@ struct Cliente :Codable{
     let apellidos : String?
     let fechaNacimiento: String?
     let sucursalByIdSucursal: Sucursal?
+    
+    func toString() -> String {
+        return (dni ?? "") + " - "+(nombre ?? "") + " " + (apellidos ?? "")
+    }
 }
 class VistaCliente: UIViewController {
     var UrlStr = "http://dam2-15e3b8:8000/"
