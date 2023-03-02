@@ -53,7 +53,7 @@ class VistaCuenta: UIViewController {
             do {
                 let decoder = JSONDecoder()
                 let datos = try decoder.decode([Cuenta].self, from: data)
-                self.cuentas.append(contentsOf: datos)
+                self.cuentas = datos
                 DispatchQueue.main.async {
                     self.tabla.reloadData()
                 }
@@ -64,7 +64,11 @@ class VistaCuenta: UIViewController {
             }
         }.resume()
     }
+    
 
+    @IBAction func btnActualizar(_ sender: Any) {
+        buscarCuentas()
+    }
 }
 extension VistaCuenta: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

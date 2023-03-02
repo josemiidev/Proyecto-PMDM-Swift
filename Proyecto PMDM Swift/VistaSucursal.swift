@@ -60,7 +60,7 @@ class VistaSucursal: UIViewController {
                 let decoder = JSONDecoder()
                 let datos = try decoder.decode([Sucursal].self, from: data)
                 //print("tabla: \(datos.count)")
-                self.sucursales.append(contentsOf: datos)
+                self.sucursales = datos
                 DispatchQueue.main.async {
                     self.tabla.reloadData()
                 }
@@ -70,6 +70,10 @@ class VistaSucursal: UIViewController {
                 return
             }
         }.resume()
+    }
+    
+    @IBAction func btnActualizar(_ sender: Any) {
+        buscarSucursales()
     }
 }
 
@@ -93,6 +97,7 @@ extension VistaSucursal: UITableViewDelegate, UITableViewDataSource{
         let vc = storyboard.instantiateViewController(withIdentifier: "CRUD_Sucursal") as! VistaSucursalCRUD;
         vc.id = celda.id
         self.present(vc,animated: true,completion: nil)
+        print("HOLA")
     }
 }
 

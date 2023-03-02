@@ -174,11 +174,11 @@ class VistaClienteCRUD: UIViewController {
                 DispatchQueue.main.async {
                     
                     // Create new Alert
-                     var dialogMessage = UIAlertController(title: "Correcto", message: "Nuevo Cliente añadido correctamente", preferredStyle: .alert)
+                     let dialogMessage = UIAlertController(title: "Correcto", message: "Nuevo Cliente añadido correctamente", preferredStyle: .alert)
                      
                      // Create OK button with action handler
                      let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                         
+                         self.dismiss(animated: true, completion: nil)
                       })
                      
                      //Add OK button to a dialog message
@@ -216,11 +216,11 @@ class VistaClienteCRUD: UIViewController {
             do {
                 DispatchQueue.main.async {
                         // Create new Alert
-                         var dialogMessage = UIAlertController(title: "Correcto", message: "Cliente eliminado correctamente", preferredStyle: .alert)
+                         let dialogMessage = UIAlertController(title: "Correcto", message: "Cliente eliminado correctamente", preferredStyle: .alert)
                          
                          // Create OK button with action handler
                          let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                             
+                             self.dismiss(animated: true, completion: nil)
                           })
                          
                          //Add OK button to a dialog message
@@ -269,11 +269,11 @@ class VistaClienteCRUD: UIViewController {
                 DispatchQueue.main.async {
                     
                     // Create new Alert
-                     var dialogMessage = UIAlertController(title: "Correcto", message: "Cliente modificado correctamente", preferredStyle: .alert)
+                     let dialogMessage = UIAlertController(title: "Correcto", message: "Cliente modificado correctamente", preferredStyle: .alert)
                      
                      // Create OK button with action handler
                      let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                         
+                         self.dismiss(animated: true, completion: nil)
                       })
                      
                      //Add OK button to a dialog message

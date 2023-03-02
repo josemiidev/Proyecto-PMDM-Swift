@@ -59,7 +59,7 @@ class VistaCliente: UIViewController {
                 let decoder = JSONDecoder()
                 let datos = try decoder.decode([Cliente].self, from: data)
                 //print("tabla: \(datos.count)")
-                self.clientes.append(contentsOf: datos)
+                self.clientes = datos
                 DispatchQueue.main.async {
                     self.tabla.reloadData()
                 }
@@ -69,6 +69,10 @@ class VistaCliente: UIViewController {
                 return
             }
         }.resume()
+    }
+    
+    @IBAction func btnActualizar(_ sender: Any) {
+        buscarClientes()
     }
 }
 extension VistaCliente: UITableViewDelegate, UITableViewDataSource{

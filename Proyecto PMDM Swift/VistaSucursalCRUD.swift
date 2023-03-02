@@ -76,8 +76,7 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func guardarSucursal(){
-        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
-        guard let url = URL(string: UrlStr + "cuentas") else {
+        guard let url = URL(string: UrlStr + "sucursales") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -113,11 +112,11 @@ class VistaSucursalCRUD: UIViewController {
                 DispatchQueue.main.async {
                     
                     // Create new Alert
-                     var dialogMessage = UIAlertController(title: "Correcto", message: "Nueva Sucursal añadida correctamente", preferredStyle: .alert)
+                    let dialogMessage = UIAlertController(title: "Correcto", message: "Nueva Sucursal añadida correctamente", preferredStyle: .alert)
                      
                      // Create OK button with action handler
                      let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                         
+                         self.dismiss(animated: true, completion: nil)
                       })
                      
                      //Add OK button to a dialog message
@@ -134,8 +133,7 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func eliminarSucursal(id:Int){
-        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
-        guard let url = URL(string: UrlStr + "cuentas/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "sucursales/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -148,7 +146,7 @@ class VistaSucursalCRUD: UIViewController {
                 print(error!)
                 return
             }
-            guard let data = data else{
+            guard data != nil else{
                 print("ERROR DATOS NO RECIBIDOS")
                 return
             }
@@ -159,11 +157,11 @@ class VistaSucursalCRUD: UIViewController {
             do {
                 DispatchQueue.main.async {
                         // Create new Alert
-                         var dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal eliminada correctamente", preferredStyle: .alert)
+                    let dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal eliminada correctamente", preferredStyle: .alert)
                          
                          // Create OK button with action handler
                          let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                             
+                             self.dismiss(animated: true, completion: nil)
                           })
                          
                          //Add OK button to a dialog message
@@ -173,9 +171,6 @@ class VistaSucursalCRUD: UIViewController {
                     
                 }
                 
-            } catch {
-                print("Error: Trying to convert JSON data to string")
-                return
             }
         }.resume()
     }
@@ -217,11 +212,11 @@ class VistaSucursalCRUD: UIViewController {
                 DispatchQueue.main.async {
                     
                     // Create new Alert
-                     var dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal modificada correctamente", preferredStyle: .alert)
+                    let dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal modificada correctamente", preferredStyle: .alert)
                      
                      // Create OK button with action handler
                      let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                         
+                         self.dismiss(animated: true, completion: nil)
                       })
                      
                      //Add OK button to a dialog message
@@ -241,12 +236,10 @@ class VistaSucursalCRUD: UIViewController {
         if(!(poblacion.text?.isEmpty ?? true) && !(provincia.text?.isEmpty ?? true) && !(referencia.text?.isEmpty ?? true)){
             
             if(id == 0){
-                var s = Sucursal(id: 0, poblacion: poblacion.text, provincia: provincia.text, referencia: referencia.text)
-                item = s
+                item = Sucursal(id: 0, poblacion: poblacion.text, provincia: provincia.text, referencia: referencia.text)
                 guardarSucursal()
             }else{
-                var s = Sucursal(id: id, poblacion: poblacion.text, provincia: provincia.text, referencia: referencia.text)
-                item = s
+                item = Sucursal(id: id, poblacion: poblacion.text, provincia: provincia.text, referencia: referencia.text)
                 modificarSucursal(id: id)
             }
             
