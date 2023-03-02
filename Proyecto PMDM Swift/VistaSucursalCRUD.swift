@@ -35,7 +35,6 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func buscarSucursal(id:Int){
-        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
         guard let url = URL(string: UrlStr + "sucursales/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
@@ -80,21 +79,18 @@ class VistaSucursalCRUD: UIViewController {
             print("ERROR AL CREAR LA URL")
             return
         }
-        
         guard let jsonData = try? JSONEncoder().encode(item) else {
             print("Error: Trying to convert model to JSON data")
             return
         }
-        
         var request = URLRequest(url:url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
-        request.setValue("application/json", forHTTPHeaderField: "Accept") // the response expected to be in JSON format
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpBody = jsonData
         URLSession.shared.dataTask(with: request) {data,response,error in
             guard error == nil else {
                 print("ERROR AL HACER LA LLAMADA POST")
-                print(error!)
                 return
             }
             guard let data = data else{
@@ -110,21 +106,13 @@ class VistaSucursalCRUD: UIViewController {
                 let datos = try decoder.decode(Sucursal.self, from: data)
                 self.item = datos
                 DispatchQueue.main.async {
-                    
-                    // Create new Alert
                     let dialogMessage = UIAlertController(title: "Correcto", message: "Nueva Sucursal añadida correctamente", preferredStyle: .alert)
-                     
-                     // Create OK button with action handler
-                     let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                         self.dismiss(animated: true, completion: nil)
-                      })
-                     
-                     //Add OK button to a dialog message
-                     dialogMessage.addAction(ok)
-                     // Present Alert to
-                     self.present(dialogMessage, animated: true, completion: nil)
+                    let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    dialogMessage.addAction(ok)
+                    self.present(dialogMessage, animated: true, completion: nil)
                 }
-                
             } catch {
                 print("Error: Trying to convert JSON data to string")
                 return
@@ -137,7 +125,6 @@ class VistaSucursalCRUD: UIViewController {
             print("ERROR AL CREAR LA URL")
             return
         }
-        
         var request = URLRequest(url:url)
         request.httpMethod = "DELETE"
         URLSession.shared.dataTask(with: request) {data,response,error in
@@ -156,37 +143,31 @@ class VistaSucursalCRUD: UIViewController {
             }
             do {
                 DispatchQueue.main.async {
-                        // Create new Alert
+                    // Create new Alert
                     let dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal eliminada correctamente", preferredStyle: .alert)
-                         
-                         // Create OK button with action handler
-                         let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                             self.dismiss(animated: true, completion: nil)
-                          })
-                         
-                         //Add OK button to a dialog message
-                         dialogMessage.addAction(ok)
-                         // Present Alert to
-                         self.present(dialogMessage, animated: true, completion: nil)
                     
+                    // Create OK button with action handler
+                    let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    //Add OK button to a dialog message
+                    dialogMessage.addAction(ok)
+                    // Present Alert to
+                    self.present(dialogMessage, animated: true, completion: nil)
                 }
-                
             }
         }.resume()
     }
     
     func modificarSucursal(id:Int){
         guard let url = URL(string: UrlStr + "sucursales/" + String(id)) else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
-        
         guard let jsonData = try? JSONEncoder().encode(item) else {
             print("Error: Trying to convert model to JSON data")
             return
         }
-        
         var request = URLRequest(url:url)
         request.httpMethod = "PUT"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
@@ -194,7 +175,6 @@ class VistaSucursalCRUD: UIViewController {
         URLSession.shared.dataTask(with: request) {data,response,error in
             guard error == nil else {
                 print("ERROR AL HACER LA LLAMADA POST")
-                print(error!)
                 return
             }
             guard let data = data else{
@@ -210,19 +190,12 @@ class VistaSucursalCRUD: UIViewController {
                 let datos = try decoder.decode(Sucursal.self, from: data)
                 self.item = datos
                 DispatchQueue.main.async {
-                    
-                    // Create new Alert
                     let dialogMessage = UIAlertController(title: "Correcto", message: "Sucursal modificada correctamente", preferredStyle: .alert)
-                     
-                     // Create OK button with action handler
-                     let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
-                         self.dismiss(animated: true, completion: nil)
-                      })
-                     
-                     //Add OK button to a dialog message
-                     dialogMessage.addAction(ok)
-                     // Present Alert to
-                     self.present(dialogMessage, animated: true, completion: nil)
+                    let ok = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) -> Void in
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    dialogMessage.addAction(ok)
+                    self.present(dialogMessage, animated: true, completion: nil)
                 }
                 
             } catch {
@@ -231,7 +204,7 @@ class VistaSucursalCRUD: UIViewController {
             }
         }.resume()
     }
-
+    
     @IBAction func btnGuardar(_ sender: Any) {
         if(!(poblacion.text?.isEmpty ?? true) && !(provincia.text?.isEmpty ?? true) && !(referencia.text?.isEmpty ?? true)){
             
