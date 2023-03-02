@@ -15,6 +15,7 @@ struct Cliente :Codable{
     let sucursalByIdSucursal: Sucursal?
 }
 class VistaCliente: UIViewController {
+    var UrlStr = "http://dam2-15e3b8:8000/"
     
     @IBOutlet weak var tabla: UITableView!
     var clientes : [Cliente] = []
@@ -29,7 +30,7 @@ class VistaCliente: UIViewController {
     }
     
     func buscarClientes(){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes") else {
+        guard let url = URL(string: UrlStr + "clientes") else {
         //guard let url = URL(string: "http://dam2-15e3b8:8000/clientes") else {
             print("ERROR AL CREAR LA URL")
             return

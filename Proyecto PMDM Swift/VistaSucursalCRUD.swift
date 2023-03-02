@@ -8,7 +8,7 @@
 import UIKit
 
 class VistaSucursalCRUD: UIViewController {
-
+    var UrlStr = "http://dam2-15e3b8:8000/"
     @IBOutlet weak var btnEliminar: UIButton!
     @IBOutlet weak var btnGuardar: UIButton!
     @IBOutlet weak var referencia: UITextField!
@@ -35,8 +35,8 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func buscarSucursal(id:Int){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales/" + String(id)) else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "sucursales/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -76,8 +76,8 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func guardarSucursal(){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas") else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
+        guard let url = URL(string: UrlStr + "cuentas") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -134,8 +134,8 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func eliminarSucursal(id:Int){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas/" + String(id)) else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "cuentas/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -181,7 +181,7 @@ class VistaSucursalCRUD: UIViewController {
     }
     
     func modificarSucursal(id:Int){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "sucursales/" + String(id)) else {
         //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return

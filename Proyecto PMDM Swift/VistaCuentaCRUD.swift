@@ -8,7 +8,7 @@
 import UIKit
 
 class VistaCuentaCRUD: UIViewController {
-
+    var UrlStr = "http://dam2-15e3b8:8000/"
     @IBOutlet weak var titulo: UILabel!
     
     @IBOutlet weak var btnEliminar: UIButton!

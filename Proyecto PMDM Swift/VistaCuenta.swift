@@ -14,6 +14,7 @@ struct Cuenta :Codable{
     let clienteByIdCliente: Cliente?
 }
 class VistaCuenta: UIViewController {
+    var UrlStr = "http://dam2-15e3b8:8000/"
 
     @IBOutlet weak var tabla: UITableView!
     
@@ -28,7 +29,7 @@ class VistaCuenta: UIViewController {
         buscarCuentas()
     }
     func buscarCuentas(){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/cuentas") else {
+        guard let url = URL(string: UrlStr + "cuentas") else {
         //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas") else {
             print("ERROR AL CREAR LA URL")
             return

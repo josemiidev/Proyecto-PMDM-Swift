@@ -12,8 +12,13 @@ struct Sucursal :Codable{
     let poblacion : String?
     let provincia : String?
     let referencia : String?
+    
+    func toString() -> String {
+        return (poblacion ?? "") + " ("+(provincia ?? "") + ") - " + (referencia ?? "")
+        }
 }
 class VistaSucursal: UIViewController {
+    var UrlStr = "http://dam2-15e3b8:8000/"
     
     @IBOutlet weak var tabla: UITableView!
     
@@ -30,7 +35,7 @@ class VistaSucursal: UIViewController {
     }
     
     func buscarSucursales(){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
+        guard let url = URL(string: UrlStr + "sucursales") else {
         //guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales") else {
             print("ERROR AL CREAR LA URL")
             return

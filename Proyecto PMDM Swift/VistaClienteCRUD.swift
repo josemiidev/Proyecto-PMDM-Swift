@@ -8,7 +8,7 @@
 import UIKit
 
 class VistaClienteCRUD: UIViewController {
-    
+    var UrlStr = "http://dam2-15e3b8:8000/"
     @IBOutlet weak var btnEliminar: UIButton!
     @IBOutlet weak var btnGuardar: UIButton!
     @IBOutlet weak var spinner: UIPickerView!
@@ -26,7 +26,7 @@ class VistaClienteCRUD: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buscarSucursales()
+        
         
         spinner.delegate = self
         spinner.dataSource = self
@@ -40,11 +40,13 @@ class VistaClienteCRUD: UIViewController {
             buscarCliente(id:id)
         }
         
+        buscarSucursales()
+        
         // Do any additional setup after loading the view.
     }
     func buscarSucursales(){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales") else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/sucursales") else {
+        guard let url = URL(string: UrlStr + "sucursales") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -71,6 +73,15 @@ class VistaClienteCRUD: UIViewController {
                 self.sucursales.append(contentsOf: datos)
                 DispatchQueue.main.async {
                     self.spinner.reloadAllComponents()
+                    var cont = 0
+                    for sucursal in self.sucursales{
+                        if(sucursal.id == self.item.sucursalByIdSucursal?.id){
+                            break
+                        }else{
+                            cont = cont + 1
+                        }
+                    }
+                    self.spinner.selectRow(cont, inComponent: 0, animated: true)
                 }
                 
             } catch {
@@ -81,8 +92,8 @@ class VistaClienteCRUD: UIViewController {
     }
     
     func buscarCliente(id:Int){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes/" + String(id)) else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/sucursales/" + String(id)) else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "clientes/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -128,8 +139,8 @@ class VistaClienteCRUD: UIViewController {
     }
     
     func guardarCliente(){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes") else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas") else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes") else {
+        guard let url = URL(string: UrlStr + "clientes") else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -186,8 +197,8 @@ class VistaClienteCRUD: UIViewController {
     }
     
     func eliminarCliente(id:Int){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes/" + String(id)) else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas/" + String(id)) else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "clientes/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -218,16 +229,14 @@ class VistaClienteCRUD: UIViewController {
                          dialogMessage.addAction(ok)
                          // Present Alert to
                          self.present(dialogMessage, animated: true, completion: nil)
-                    
                 }
-                
             }
         }.resume()
     }
     
     func modificarCliente(id:Int){
-        guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes/" + String(id)) else {
-        //guard let url = URL(string: "http://dam2-15e3b8:8000/cuentas/" + String(id)) else {
+        //guard let url = URL(string: "http://JOSEMIGUEL:8000/clientes/" + String(id)) else {
+        guard let url = URL(string: UrlStr + "clientes/" + String(id)) else {
             print("ERROR AL CREAR LA URL")
             return
         }
@@ -281,6 +290,42 @@ class VistaClienteCRUD: UIViewController {
             }
         }.resume()
     }
+    
+    @IBAction func btnGuardar(_ sender: Any) {
+        if(!(dni.text?.isEmpty ?? true) && !(nombre.text?.isEmpty ?? true) && !(apellidos.text?.isEmpty ?? true)){
+            print(id)
+            if(id == 0){
+                let date = fecha_nacimiento.date
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let fecha = dateFormatter.string(from: date)
+                
+                let suc = sucursales[spinner.selectedRow(inComponent: 0)]
+                
+                var c = Cliente(id: 0, dni: dni.text, nombre: nombre.text, apellidos: apellidos.text, fechaNacimiento: fecha,sucursalByIdSucursal: suc)
+                
+                item = c
+                
+                guardarCliente()
+            }else{
+                let date = fecha_nacimiento.date
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let fecha = dateFormatter.string(from: date)
+                
+                let suc = sucursales[spinner.selectedRow(inComponent: 0)]
+                
+                var c = Cliente(id: id, dni: dni.text, nombre: nombre.text, apellidos: apellidos.text, fechaNacimiento: fecha,sucursalByIdSucursal: suc)
+                
+                item = c
+                modificarCliente(id: id)
+            }
+        }
+    }
+    
+    @IBAction func btnEliminar(_ sender: Any) {
+        eliminarCliente(id: id)
+    }
 }
 
 extension VistaClienteCRUD: UIPickerViewDataSource, UIPickerViewDelegate{
@@ -292,7 +337,7 @@ extension VistaClienteCRUD: UIPickerViewDataSource, UIPickerViewDelegate{
         return sucursales.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (sucursales[row].referencia ?? "") + " - " + (sucursales[row].poblacion ?? "")
+        return sucursales[row].toString()
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.indexOfPicker = row
